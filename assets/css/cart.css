@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Header Start */
+.logobotom{
+    font-size: 15px;
+}
+.logobotom img{
+    width: 20px;
+}
+/* Header End */

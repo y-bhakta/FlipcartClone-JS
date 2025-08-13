@@ -1,0 +1,213 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F1F2F4;
+}
+a{
+    text-decoration: none;
+}
+.hide{
+    display: none;
+}
+.left-3{
+    left: 750px;
+}
+.active{
+    display: block !important;
+}
+.active2{
+    background-color: black;
+}
+.z-999{
+    z-index: 999;
+}
+/* Header Start */
+header .navbar-collapse i {
+    color: #717478 !important;
+    font-size: 22px;
+}
+header .navbar-nav .nav-item i {
+    font-size: 25px;
+}
+header .navbar-nav .nav-item a {
+    font-size: 18px;
+}
+/* Header End */
+/* Banner Slider Start */
+.slider{
+    position: relative;
+    height: 250px;
+    background-color: #fff;
+}
+.slider .slide-item{
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+.box{
+    padding: 5px 10px;
+    border: 1px solid black;
+    margin: 0px 5px;
+    border-radius: 25px;
+}
+.slider .Prev,.slider .Next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.slider .Next{
+    right: 0;
+}
+.Prev,.Next{
+    padding: 20px 5px;
+    border: none;
+    box-shadow: 0px 0px 3px black;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.Prev:hover,.Next:hover{
+    background-color: black;
+    color: white;
+}
+/* Banner Sider End */
+/* menu start */
+.menu ul{
+    overflow: hidden;
+    overflow-x:scroll ;
+}
+.menus{
+    width: 11.11%;
+    position: absolute;
+}
+.menus a img{
+    height: 80px;
+}
+.menus a p{
+    font-weight: 500;
+}
+.dropdown1,.dropdown2,.dropdown3,.dropdown4{
+    position: absolute;
+    width: 240px; 
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    transition: 0.5s;
+    z-index: 999;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.dropdown1 ol li a,.dropdown2 ol li a,.dropdown3 ol li a,.dropdown4 ol li a{
+    width: 100%; 
+    padding: 11px 25px; 
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: grey;
+}
+.dropdown1 ol li a:hover,.dropdown2 ol li a:hover,.dropdown3 ol li a:hover,.dropdown4 ol li a:hover{
+    color: black;
+    background-color: rgba(178, 222, 236, 0.616);
+}
+/* menu end */
+/* slide-plane start */
+.slide{
+    background-color: #fff;
+    transition: 1s;
+    width: 20%;
+}
+.sh{
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+}
+/* slide-plane end */
+/* Products Details Start */
+.product-list{
+    height: 350px;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.product-list .cart .item-details h3 {
+    font-size: large;
+    font-weight: 500;
+    color: black;
+}
+.card-slide1{
+    width: 20% !important;
+    transition: 1s;
+}
+.card-slide1 .cart a img{
+    width: 150px;
+    height: 150px;
+}
+/* Products Details End */
+/* Product 2 Start */
+.product-list2{
+    height: 350px;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.product-list2 .cart .item-details h3 {
+    font-size: large;
+    font-weight: 500;
+    color: black;
+}
+.card-slide1{
+    width: 20% !important;
+    transition: 1s;
+}
+.card-slide1 .cart a img{
+    width: 150px;
+    height: 150px;
+}
+/* Product 2 End */
+/* Home Slider Start */
+.slide2{
+    background-color: #fff;
+    transition: 1s;
+    width: 20%;
+}
+.res-img{
+    width: 120px !important;
+}
+/* Home Slider End */
+/* Slide 3 Start */
+.mainslide{
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+.slide3{
+    padding: 0px 5px;
+    width: 33.33%;
+    transition: 1s;
+    position: absolute;
+}
+/* Slide 3 End */
+/* 3 Sec Start */
+.sep-btn{
+    color: white;
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+}
+.rsbo{
+    border: 0.5px solid lightgray;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+/* 3 Sec End */
+/* Footer Start */
+.unho a{
+    font-size: 15px !important;
+}
+.unho a:hover{
+    text-decoration: underline;
+}
+/* Footer End */
