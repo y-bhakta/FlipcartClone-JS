@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #F1F3F6 !important;
+}
 /* Header Start */
 .logobotom{
     font-size: 15px;
@@ -11,3 +14,29 @@
     width: 20px;
 }
 /* Header End */
+/* ATC Start */
+.dev-btn{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: blue;
+    padding: 5px 15px;
+    background-color: #fff;
+}
+.dev-btn:hover{
+    box-shadow: 0px 0px 1px black;
+}
+.atc .img img{
+    width: 150px !important;
+    height: 100px !important;
+    object-fit: contain;
+}
+.placebtn{
+    background-color: orangered;
+    border: none;
+}
+.shtop{
+    box-shadow: 0px -5px 16px -1px rgba(0, 0, 0, 0.356);
+}
+/* ATC End */

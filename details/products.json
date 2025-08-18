@@ -1,58 +1,64 @@
 [
     {
         "id":1,
-        "name" : "Sofa & Sectional",
-        "category" : "Interior",
-        "price" : "₹7,999.00",
-        "image":"../assets/img/p-1.webp",
-        "description":"It is a versatile piece of furniture found in living rooms, waiting areas, and other residential and commercial settings for both seating and sometimes sleeping"
+        "name" : "Zebronics",
+        "category" : "Laptop",
+        "price" : "₹22,990",
+        "image":"../assets/img/lp-1.webp",
+        "description":"A laptop is a portable personal computer (PC) that combines the components of a desktop computer into a single, compact unit"
     },
     {
         "id":2,
-        "name" : "Office Study Chairs",
-        "category" : "Chairs",
-        "price" : "₹1,800.00",
-        "image":"../assets/img/p-2.webp",
-        "description":"It is a versatile piece of furniture found in living rooms, waiting areas, and other residential and commercial settings for both seating and sometimes sleeping"
+        "name" : "Ultimus Laptops",
+        "category" : "Laptop",
+        "price" : "₹12,990",
+        "image":"../assets/img/lp-2.webp",
+        "description":"A laptop is a portable personal computer (PC) that combines the components of a desktop computer into a single, compact unit",
+        "size":"15.6 inch, Midnight Blue, 1.76 Kg"
     },
     {
         "id":3,
-        "name" : "Beds",
-        "category" : "Sleeping",
-        "price" : "₹1,790.00",
-        "image":"../assets/img/p-3.webp",
-        "description":"It is a versatile piece of furniture found in living rooms, waiting areas, and other residential and commercial settings for both seating and sometimes sleeping"
+        "name" : "Primebook Laptop",
+        "category" : "Laptop",
+        "price" : "₹14,990",
+        "image":"../assets/img/lp-3.webp",
+        "description":"A laptop is a portable personal computer (PC) that combines the components of a desktop computer into a single, compact unit",
+        "size":"15.6 inch, Midnight Blue, 1.76 Kg"
     },
     {
         "id":4,
-        "name" : "TV Units",
-        "category" : "Electric",
-        "price" : "₹1,240.00",
-        "image":"../assets/img/p-4.webp",
-        "description":"It is a versatile piece of furniture found in living rooms, waiting areas, and other residential and commercial settings for both seating and sometimes sleeping"
+        "name" : "Lanovo Laptops",
+        "category" : "Laptop",
+        "price" : "₹26,490",
+        "image":"../assets/img/lp-4.webp",
+        "description":"A laptop is a portable personal computer (PC) that combines the components of a desktop computer into a single, compact unit",
+        "size":"15.6 inch, Midnight Blue, 1.76 Kg"
     },
     {
         "id":5,
-        "name" : "Sofa Beds",
-        "category" : "Sleeping",
-        "price" : "₹6,099.00",
-        "image":"../assets/img/p-5.webp",
-        "description":"It is a versatile piece of furniture found in living rooms, waiting areas, and other residential and commercial settings for both seating and sometimes sleeping"
+        "name" : "Samsung Laptops",
+        "category" : "Laptop",
+        "price" : "₹42,990",
+        "image":"../assets/img/lp-5.webp",
+        "description":"A laptop is a portable personal computer (PC) that combines the components of a desktop computer into a single, compact unit",
+        "size":"15.6 inch, Midnight Blue, 1.76 Kg"
     },
     {
         "id":6,
-        "name" : "Sofa Sets",
-        "category" : "Setting",
-        "price" : "₹21,999.00",
-        "image":"../assets/img/p-6.webp",
-        "description":"It is a versatile piece of furniture found in living rooms, waiting areas, and other residential and commercial settings for both seating and sometimes sleeping"
+        "name" : "MIS Laptops",
+        "category" : "Laptop",
+        "price" : "₹32,990",
+        "image":"../assets/img/lp-6.webp",
+        "description":"A laptop is a portable personal computer (PC) that combines the components of a desktop computer into a single, compact unit",
+        "size":"15.6 inch, Midnight Blue, 1.76 Kg"
     },
     {
         "id":7,
-        "name" : "Sofa Beds",
-        "category" : "Sleeping",
-        "price" : "₹6,099.00",
-        "image":"../assets/img/p-7.webp",
-        "description":"It is a versatile piece of furniture found in living rooms, waiting areas, and other residential and commercial settings for both seating and sometimes sleeping"
+        "name" : "HP Laptop",
+        "category" : "Laptops",
+        "price" : "₹28,990",
+        "image":"../assets/img/lp-7.webp",
+        "description":"A laptop is a portable personal computer (PC) that combines the components of a desktop computer into a single, compact unit",
+        "size":"15.6 inch, Midnight Blue, 1.76 Kg"
     }
 ]

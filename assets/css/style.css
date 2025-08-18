@@ -136,12 +136,13 @@ header .navbar-nav .nav-item a {
     color: black;
 }
 .card-slide1{
-    width: 20% !important;
+    width: 30% !important;
     transition: 1s;
 }
 .card-slide1 .cart a img{
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 120px !important;
+    object-fit: contain;
 }
 /* Products Details End */
 /* Product 2 Start */

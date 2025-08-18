@@ -40,7 +40,7 @@ header .navbar-nav .nav-item a {
 }
 
 .details .title h2 {
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 900;
 }
@@ -61,5 +61,60 @@ header .navbar-nav .nav-item a {
 }
 .p-img{
     border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+.AddToCart{
+    background-color: orange;
+    border: none;
+    padding: 15px 20px;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+}
+.checkout{
+    background-color: rgb(180, 180, 12);
+    border: none;
+    padding: 15px 20px;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
 }
 /* details End */
+
+
+
+/* Media File */
+@media(max-width:575px) {
+    .p-img{
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media(min-width:576px) {
+    .p-img{
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media(min-width:768px) {
+    .p-img{
+        width: 85%;
+        height: 85%;
+    }
+}
+
+@media(min-width:992px) {
+    .p-img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media(min-width:1200px) {
+    
+}
+
+@media(min-width:1400px) {}

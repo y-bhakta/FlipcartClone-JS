@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/img/logo.jpeg">
-    <title>Document</title>
+    <link rel="icon" href="../assets/img/logo.jpeg">
+    <title>Cart-FlipKart</title>
     <link rel="stylesheet" href="../assets/css/cart.css">
     <!-- BT Link  -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 
 <body class="detail-body">
@@ -19,7 +21,8 @@
                 <div class="col-9 col-md-8 col-lg-8 d-flex justify-content-between align-items-center">
                     <div class="col-6 col-md-4 col-lg-3">
                         <img src="../assets/img/logo2.png" class="img-fluid" alt="">
-                        <p class="text-white mb-0 logobotom">Explore <span class="text-warning">Pluse</span> <img src="../assets/img/ep.png" alt=""> </p>
+                        <p class="text-white mb-0 logobotom">Explore <span class="text-warning">Pluse</span> <img
+                                src="../assets/img/ep.png" alt=""> </p>
                     </div>
                     <div class="col-6 col-md-7 col-lg-8">
                         <input type="text" class="form-control" placeholder="Search">
@@ -27,17 +30,72 @@
                 </div>
                 <div class="col-3 col-md-4 d-flex justify-content-center align-items-center">
                     <div class="col-10 col-md-6 col-lg-4">
-                        <button class="w-100 bg-white text-primary text-center fw-bold border-0 shadow py-1">Login</button>
+                        <button
+                            class="w-100 bg-white text-primary text-center fw-bold border-0 shadow py-1">Login</button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    
+
+    <main>
+        <section class="atc my-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 border border-1 border-secondary rounded-3 px-0">
+                        <div class="col-12 d-flex justify-content-between py-3 bg-white px-4 rounded-3">
+                            <h4 class="h5 fw-normal">From Saved Addresses</h4>
+                            <div>
+                                <button class="dev-btn">
+                                    Enter Delivery Pincode
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <!-- Products Will Show Here -->
+                        </div>
+                        <div class="col-12 bg-white p-3 d-flex justify-content-end shtop">
+                            <div class="col-4">
+                                <button class="w-100 py-2 px-5 fw-bold text-white placebtn">
+                                    PLACE ORDER
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 mt-3 mt-lg-0">
+                        <div class="col-12 bg-white py-3 px-3">
+                            <div class="col-12 border-bottom border-1 border-secondary">
+                                <h5 class="text-uppercase text-muted">Price Details</h5>
+                            </div>
+                            <div class="col-12 py-2 d-flex justify-content-between">
+                                <h5 class="fw-normal" id="items">Price(1 items)</h5>
+                                <h5 id="productprice" class="fw-normal"></h5>
+                            </div>
+                            <div class="col-12 py-2 d-flex justify-content-between">
+                                <h5 class="fw-normal">Promise Fee</h5>
+                                <h5 class="fw-normal">₹29</h5>
+                            </div>
+                            <div
+                                class="col-12 py-3 d-flex justify-content-between border-bottom border-top border-1 border-secondary">
+                                <h5 class="">Total Price</h5>
+                                <h5 id="totalprice">$65000</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 py-3 px-2">
+                            <p class="text-muted fw-bold">Safe and Secure Payments.Easy returns.100% Authentic products.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <section class="list">
         <div class="container">
             <div class="row">
-                <div class="list-item"></div>
+                <!-- <div class="list-item"></div> -->
+
             </div>
         </div>
     </section>
@@ -49,45 +107,87 @@
         function updateQuantity(index, action) {
             if (action === 'increase') {
                 cart[index].quantity += 1;
+                document.getElementById('nofpro').innerText = cart[index].quantity;
+                calprice();
             } else if (action === 'decrease') {
                 if (cart[index].quantity > 1) {
                     cart[index].quantity -= 1;
+                    document.getElementById('nofpro').innerText = cart[index].quantity;
+                    calprice();
                 } else {
                     cart.splice(index, 1);
+                    document.getElementById('nofpro').innerText = cart[index].quantity;
+                    calprice();
                 }
             }
             localStorage.setItem("cart", JSON.stringify(cart));
-            showData();
+            // showData();
         }
         function showData() {
             listCart.innerHTML = '';
             cart.forEach((item, index) => {
                 listCart.innerHTML += `
-            <div class = "cartItem col-6  d-flex align-items-center justify-content-between border-bottom">
-               <div class="img d-flex justify-content-center col-4">
-                 <img src = ${item.image} class=""></div>
-                <div class ="col-4 content text-center">
-                    <h3 class=" text-center">${item.name}</h3>
-                    <p class="text-center">${item.price}</p>
-                    <button id="decrease" class="border-0 px-2" onclick = "updateQuantity(${index} , 'decrease')">
-                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/>
-                        </svg>
+            <div class="col-12 mt-3 px-2 py-3 bg-white d-flex flex-wrap">
+                            <div class="col-12 col-md-3 d-flex justify-content-center">
+                                <div class="img">
+                                    <a href="#">
+                                        <img src="${item.image}" alt="${item.name}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-9 d-flex flex-wrap justify-content-between mt-4 mt-md-0">
+                                <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
+                                    <div>
+                                        <h5 class="mb-0">${item.name}</h5>
+                                        <p class="text-muted mb-0">${item.size}</p>
+                                        <p class="text-muted mb-0 mt-3">Seller:RetaiNet</p>
+                                        <p class="text-dark fw-bold mb-0 mt-3 fs-4">${item.price}</p>
+                                        <p class="text-dark mb-0">+ ₹29 Protect Promise Fee</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end px-3 mt-3 mt-md-0">
+                                    <p class="text-dark fw-normal">Delivery By Aug 20</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 bg-white mt-3 pt-2 px-2 py-3">
+                            <div>
+                                <button id="decrease" class="border-0 px-2 rounded-3" onclick="updateQuantity(${index}, 'decrease')">
+                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M5 12h14" />
+                                    </svg>
 
-                    </button>
-                    <span>${item.quantity}</span>
-                    <button id="increase" class="border-0 px-2" onclick = "updateQuantity(${index} , 'increase')">
-                       <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24">
-                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
-                       </svg>
-
-                    </button>
-                </div>
-            </div>
+                                </button>
+                                <span id="nofpro">1</span>
+                                <button id="increase" class="border-0 px-2 rounded-3" onclick="updateQuantity(${index}, 'increase')">
+                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M5 12h14m-7 7V5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
             `;
             });
         }
         showData();
+        document.getElementById('items').innerText = `Price(${cart.length} items)`;
+        let Price = 0;
+        console.log(cart);
+        function calprice() {
+            cart.forEach((item, index) => {
+                let itemprice = parseInt(item.price.replace('₹', '').replace(',', ''));
+                Price += itemprice;
+            });
+            document.getElementById('productprice').innerText = `₹${Price}`;    
+        }
+        calprice();
     </script>
 </body>
 

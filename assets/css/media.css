@@ -27,6 +27,11 @@
     .res-img {
         width: 80px !important;
     }
+
+    .rh{
+        height: 225px !important;
+        object-fit: cover;
+    }
 }
 
 @media(min-width:576px) {
@@ -53,6 +58,11 @@
 
     .mainslide {
         height: 250px;
+    }
+
+    .rh{
+        height: 225px !important;
+        object-fit: cover;
     }
 }
 
