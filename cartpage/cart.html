@@ -20,7 +20,8 @@
             <div class="row">
                 <div class="col-9 col-md-8 col-lg-8 d-flex justify-content-between align-items-center">
                     <div class="col-6 col-md-4 col-lg-3">
-                        <img src="../assets/img/logo2.png" class="img-fluid" alt="">
+                        <a href="../index.html" target="_blank"><img src="../assets/img/logo2.png" class="img-fluid"
+                                alt=""></a>
                         <p class="text-white mb-0 logobotom">Explore <span class="text-warning">Pluse</span> <img
                                 src="../assets/img/ep.png" alt=""> </p>
                     </div>
@@ -73,13 +74,18 @@
                             </div>
                             <div class="col-12 py-2 d-flex justify-content-between">
                                 <h5 class="fw-normal">Promise Fee</h5>
-                                <h5 class="fw-normal">₹29</h5>
+                                <h5 class="fw-normal" id="promise"></h5>
+                            </div>
+                            <div class="col-12 py-2 d-flex justify-content-between">
+                                <h5 class="fw-normal text-success">Discount of</h5>
+                                <h5 class="fw-normal text-success">15%</h5>
                             </div>
                             <div
                                 class="col-12 py-3 d-flex justify-content-between border-bottom border-top border-1 border-secondary">
                                 <h5 class="">Total Price</h5>
-                                <h5 id="totalprice">$65000</h5>
+                                <h5 id="totalprice"></h5>
                             </div>
+                            <p id="save" class="text-success fw-bold mb-0 mt-3 fs-5"></p>
                         </div>
                         <div class="col-12 py-3 px-2">
                             <p class="text-muted fw-bold">Safe and Secure Payments.Easy returns.100% Authentic products.
@@ -90,33 +96,25 @@
             </div>
         </section>
     </main>
-
-    <section class="list">
-        <div class="container">
-            <div class="row">
-                <!-- <div class="list-item"></div> -->
-
-            </div>
-        </div>
-    </section>
     <!-- BT Js  -->
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script>
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         let listCart = document.querySelector('.list-item');
         function updateQuantity(index, action) {
+            let nofpro = document.querySelectorAll('.nofpro');
             if (action === 'increase') {
                 cart[index].quantity += 1;
-                document.getElementById('nofpro').innerText = cart[index].quantity;
+                nofpro[index].innerText = cart[index].quantity;
                 calprice();
             } else if (action === 'decrease') {
                 if (cart[index].quantity > 1) {
                     cart[index].quantity -= 1;
-                    document.getElementById('nofpro').innerText = cart[index].quantity;
+                    nofpro[index].innerText = cart[index].quantity;
                     calprice();
                 } else {
                     cart.splice(index, 1);
-                    document.getElementById('nofpro').innerText = cart[index].quantity;
+                    nofpro[index].innerText = cart[index].quantity;
                     calprice();
                 }
             }
@@ -152,17 +150,17 @@
                             </div>
                         </div>
                         <div class="col-12 bg-white mt-3 pt-2 px-2 py-3">
-                            <div>
-                                <button id="decrease" class="border-0 px-2 rounded-3" onclick="updateQuantity(${index}, 'decrease')">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <button id="decrease" class="border-0 px-2 rounded-3" onclick="updateQuantity(${index}, 'decrease')">
                                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
                                         viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
-
                                 </button>
-                                <span id="nofpro">1</span>
+                                <span class="nofpro">1</span>
                                 <button id="increase" class="border-0 px-2 rounded-3" onclick="updateQuantity(${index}, 'increase')">
                                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
@@ -171,21 +169,33 @@
                                             stroke-width="2" d="M5 12h14m-7 7V5" />
                                     </svg>
                                 </button>
+                                </div>
+                                <button class="btn btn-danger" onclick="remove(${index})">Remove</button>
                             </div>
                         </div>
             `;
             });
         }
         showData();
+        function remove(index){
+            cart.splice(index,1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            showData();
+            calprice();
+        }
         document.getElementById('items').innerText = `Price(${cart.length} items)`;
-        let Price = 0;
-        console.log(cart);
+        document.getElementById('promise').innerText = `₹${29 * cart.length}`;
         function calprice() {
+            let Price = 0;
+            let total = 0;
             cart.forEach((item, index) => {
-                let itemprice = parseInt(item.price.replace('₹', '').replace(',', ''));
+                let itemprice = parseInt(item.price.replace('₹', '').replace(',', '')) * item.quantity;
                 Price += itemprice;
             });
-            document.getElementById('productprice').innerText = `₹${Price}`;    
+            document.getElementById('productprice').innerText = `₹${Price.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
+            total = (Price + (29 * cart.length)) - (Price * 0.15);
+            document.getElementById('totalprice').innerText = "₹" + total.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+            document.getElementById('save').innerText = `Congratulations! You will save up to ₹${Price * 0.15} on this order.`;
         }
         calprice();
     </script>
