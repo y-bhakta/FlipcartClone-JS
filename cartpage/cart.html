@@ -179,13 +179,13 @@
         showData();
         function remove(index){
             cart.splice(index,1);
+            calprice();
             localStorage.setItem("cart", JSON.stringify(cart));
             showData();
-            calprice();
         }
-        document.getElementById('items').innerText = `Price(${cart.length} items)`;
         document.getElementById('promise').innerText = `₹${29 * cart.length}`;
         function calprice() {
+            document.getElementById('items').innerText = `Price(${cart.length} items)`;
             let Price = 0;
             let total = 0;
             cart.forEach((item, index) => {
